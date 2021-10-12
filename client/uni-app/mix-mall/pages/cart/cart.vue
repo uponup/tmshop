@@ -187,9 +187,9 @@
 					}
 					that.cartOriginalList = res
 					that.cartList = cartList
-					uni.setStorageSync('dsshopCartList', res)
-					uni.setStorageSync('dsshopOrderList', res)
-					getApp().showDsshopCartNumber()
+					uni.setStorageSync('TMShopCartList', res)
+					uni.setStorageSync('TMShopOrderList', res)
+					getApp().showTMShopCartNumber()
 					that.calcTotal();  //计算总价
 				})
 				
@@ -234,8 +234,8 @@
 					this.allChecked = checked;
 				}
 				this.calcTotal(type);
-				uni.setStorageSync('dsshopCartList', this.cartList)
-				uni.setStorageSync('dsshopOrderList', this.cartList)
+				uni.setStorageSync('TMShopCartList', this.cartList)
+				uni.setStorageSync('TMShopOrderList', this.cartList)
 				GoodIndent.addShoppingCart(this.cartList,function(res){})
 			},
 			//删除
@@ -245,16 +245,16 @@
 				let id = row.id;
 				const that = this
 				this.cartOriginalList.splice(row.index, 1)
-				uni.setStorageSync('dsshopCartList', this.cartOriginalList)
-				uni.setStorageSync('dsshopOrderList', this.cartOriginalList)
+				uni.setStorageSync('TMShopCartList', this.cartOriginalList)
+				uni.setStorageSync('TMShopOrderList', this.cartOriginalList)
 				if(this.cartOriginalList.length === 0){
-					uni.removeStorageSync('dsshopCartList')
-					uni.removeStorageSync('dsshopOrderList')
+					uni.removeStorageSync('TMShopCartList')
+					uni.removeStorageSync('TMShopOrderList')
 				}
 				this.cartList.splice(index, 1);
 				this.calcTotal();
 				GoodIndent.addShoppingCart(this.cartOriginalList,function(res){
-					getApp().showDsshopCartNumber()
+					getApp().showTMShopCartNumber()
 					that.loadData()
 				})
 				
@@ -266,8 +266,8 @@
 				let id = row.id;
 				const that = this
 				this.cartOriginalList.splice(row.index, 1)
-				uni.setStorageSync('dsshopCartList', this.cartOriginalList)
-				uni.setStorageSync('dsshopOrderList', this.cartOriginalList)
+				uni.setStorageSync('TMShopCartList', this.cartOriginalList)
+				uni.setStorageSync('TMShopOrderList', this.cartOriginalList)
 				GoodIndent.addShoppingCart(this.cartOriginalList,function(res){
 					that.loadData()
 				})
@@ -282,9 +282,9 @@
 							this.cartList = [];
 							this.total = 0;
 							this.empty = true;
-							uni.removeStorageSync('dsshopCartList')
-							uni.removeStorageSync('dsshopOrderList')
-							getApp().showDsshopCartNumber()
+							uni.removeStorageSync('TMShopCartList')
+							uni.removeStorageSync('TMShopOrderList')
+							getApp().showTMShopCartNumber()
 							GoodIndent.clearShoppingCart([],function(res){})
 						}
 					}
@@ -334,7 +334,7 @@
 					this.$api.msg('未选择商品')
 					return false
 				}
-				uni.setStorageSync('dsshopOrderList', goodsData)
+				uni.setStorageSync('TMShopOrderList', goodsData)
 				uni.navigateTo({
 					url: `/pages/indent/create`
 				})

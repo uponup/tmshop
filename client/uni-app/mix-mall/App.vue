@@ -9,7 +9,7 @@ export default {
 		// uni.clearStorage()
 		this.setSecret(options);
 		// #ifdef MP
-		if (uni.getStorageSync('applyDsshopOpenid')) {
+		if (uni.getStorageSync('applyTMShopOpenid')) {
 			this.checkSession();
 		} else {
 			getLogin();
@@ -20,8 +20,8 @@ export default {
 	methods: {
 		...mapMutations(['login']),
 		setSecret(options) {
-			let userInfo = uni.getStorageSync('dsshopUserInfo') || '';
-			if (userInfo && uni.getStorageSync('dsshopApplytoken')) {
+			let userInfo = uni.getStorageSync('TMShopUserInfo') || '';
+			if (userInfo && uni.getStorageSync('TMShopApplytoken')) {
 				//更新登陆状态
 				this.login(userInfo)
 			}
@@ -37,12 +37,12 @@ export default {
 			});
 		},
 		// 获取购物车角标
-		showDsshopCartNumber(){
-			const dsshopCartNumber = uni.getStorageSync('dsshopCartList') ? Object.keys(uni.getStorageSync('dsshopCartList')).length + '' : ''
-			if(dsshopCartNumber && dsshopCartNumber != '0'){
+		showTMShopCartNumber(){
+			const TMShopCartNumber = uni.getStorageSync('TMShopCartList') ? Object.keys(uni.getStorageSync('TMShopCartList')).length + '' : ''
+			if(TMShopCartNumber && TMShopCartNumber != '0'){
 				uni.setTabBarBadge({
 				  index: 2,
-				  text: dsshopCartNumber
+				  text: TMShopCartNumber
 				})
 			}else{
 				uni.removeTabBarBadge({
@@ -52,7 +52,7 @@ export default {
 		}
 	},
 	onShow: function() {
-		this.showDsshopCartNumber()
+		this.showTMShopCartNumber()
 	},
 	onHide: function() {},
 };

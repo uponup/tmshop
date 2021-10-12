@@ -122,7 +122,7 @@
 			async loadData(){
 				this.cartList = []
 				this.invalidGood = []
-				let cartList =  uni.getStorageSync('dsshopOrderList') || []
+				let cartList =  uni.getStorageSync('TMShopOrderList') || []
 				const that = this
 				for(var k in cartList){
 					cartList[k].checked = true
@@ -173,16 +173,16 @@
 				this.data.carriage = this.carriage
 				GoodIndent.create(this.data,function(res){
 					//比对购物车, 清除已下单的商品
-					const cartList  =  uni.getStorageSync('dsshopCartList') || {}
+					const cartList  =  uni.getStorageSync('TMShopCartList') || {}
 					for(var i=0;i<cartList.length;i++){
 						if(cartList[i].checked){
 						   cartList.splice(i--, 1);
 						}
 					}
-					uni.setStorageSync('dsshopCartList', cartList)
+					uni.setStorageSync('TMShopCartList', cartList)
 					GoodIndent.addShoppingCart(cartList,function(res){})
 					//清除购买列表
-					uni.removeStorageSync('dsshopOrderList')
+					uni.removeStorageSync('TMShopOrderList')
 					uni.redirectTo({
 						url: '/pages/money/pay?id='+res
 					})

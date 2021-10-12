@@ -88,7 +88,7 @@
 						  name: 'file',
 						  header: {
 							'apply-secret': that.configURL.secret,
-							'Authorization': 'Bearer ' + uni.getStorageSync('dsshopApplytoken')
+							'Authorization': 'Bearer ' + uni.getStorageSync('TMShopApplytoken')
 						  },
 						  formData: {
 							type: 1,

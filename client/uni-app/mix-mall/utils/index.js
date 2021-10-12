@@ -96,14 +96,14 @@ export function getLogin() {
 						'Content-Type': 'application/json',
 						'apply-secret': configURL.secret,
 						// #ifndef H5
-						openid: uni.getStorageSync('applyDsshopOpenid')
+						openid: uni.getStorageSync('applyTMShopOpenid')
 						// #endif
 					},
 					success: res => {
 						if (res.statusCode === 200) {
 							if (res.data.result === 'ok') {
-								uni.setStorageSync('applyDsshopSession_key', res.data.message.session_key);
-								uni.setStorageSync('applyDsshopOpenid', res.data.message.openid);
+								uni.setStorageSync('applyTMShopSession_key', res.data.message.session_key);
+								uni.setStorageSync('applyTMShopOpenid', res.data.message.openid);
 							}
 						} else {
 							uni.showToast({

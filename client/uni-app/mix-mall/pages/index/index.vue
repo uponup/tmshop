@@ -126,14 +126,14 @@ import Banner from '../../api/banner'
 		onLoad() {
 			this.loadData()
 			// #ifdef MP-WEIXIN 
-			this.wechat=uni.getStorageSync('dsshopUserInfo').wechat
+			this.wechat=uni.getStorageSync('TMShopUserInfo').wechat
 			// #endif
-			if(!uni.getStorageSync('applyDsshopGuidanceMy')){
+			if(!uni.getStorageSync('applyTMShopGuidanceMy')){
 				this.guidanceMy = true
 			}
 		},
 		onShow(){
-			getApp().showDsshopCartNumber()
+			getApp().showTMShopCartNumber()
 		},
 		methods: {
 			/**
@@ -206,12 +206,12 @@ import Banner from '../../api/banner'
 			popupBoot(){
 				this.modalName = 'guidanceMy'
 				this.guidanceMy = false
-				uni.setStorageSync('applyDsshopGuidanceMy', true)
+				uni.setStorageSync('applyTMShopGuidanceMy', true)
 			},
 			// 引导添加小程序
 			setGuidanceMy(){
 				this.guidanceMy = false
-				uni.setStorageSync('applyDsshopGuidanceMy', true)
+				uni.setStorageSync('applyTMShopGuidanceMy', true)
 			},
 			// #endif
 		},

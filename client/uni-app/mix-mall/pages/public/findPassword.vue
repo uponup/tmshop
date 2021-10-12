@@ -4,7 +4,7 @@
 		<view class="right-top-sign"></view>
 		<!-- 设置白色背景防止软键盘把下部绝对定位元素顶上来盖住输入框等 -->
 		<view class="wrapper">
-			<view class="left-top-sign">DSSHOP</view>
+			<view class="left-top-sign">TMShop</view>
 			<view class="welcome">
 				找回密码
 			</view>
@@ -98,7 +98,7 @@
 				const that = this
 				if(e.detail.iv){
 					ruleForm.iv = e.detail.iv
-					ruleForm.session_key = uni.getStorageSync('applyDsshopSession_key')
+					ruleForm.session_key = uni.getStorageSync('applyTMShopSession_key')
 					ruleForm.encryptedData = e.detail.encryptedData
 				}else{
 					if (!ruleForm.cellphone) {

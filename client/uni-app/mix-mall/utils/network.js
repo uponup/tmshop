@@ -70,7 +70,7 @@ function requestLoading(url, method, params, header, message, success, fail) {
 	// #endif
   }
 
-  let applytoken = uni.getStorageSync('dsshopApplytoken')
+  let applytoken = uni.getStorageSync('TMShopApplytoken')
   // #ifndef MP
   // 微信内部加载H5时
 	// if(getUrlKey('api_token')){
@@ -85,7 +85,7 @@ function requestLoading(url, method, params, header, message, success, fail) {
       //'Content-Type': 'application/x-www-form-urlencoded'
       'content-type': 'application/json',
       'apply-secret': configURL.secret,
-      'openid': uni.getStorageSync('applyDsshopOpenid'),
+      'openid': uni.getStorageSync('applyTMShopOpenid'),
 	  'Authorization': 'Bearer ' + applytoken
     },
     method: method ? method : 'get',

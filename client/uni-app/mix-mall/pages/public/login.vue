@@ -4,7 +4,7 @@
 		<view class="right-top-sign"></view>
 		<!-- 设置白色背景防止软键盘把下部绝对定位元素顶上来盖住输入框等 -->
 		<view class="wrapper">
-			<view class="left-top-sign">DSSHOP</view>
+			<view class="left-top-sign">TMShop</view>
 			<view class="welcome">
 				欢迎回来！
 			</view>
@@ -49,9 +49,9 @@
 			  		</view>
 			  		<view class="bg-white text-left padding text-sm">
 			  			点击同意即表示您已阅读并同意
-			  			<span class="text-blue" @tap="goNavigator(2)">《dsshop用户注册协议》</span>
+			  			<span class="text-blue" @tap="goNavigator(2)">《TMShop用户注册协议》</span>
 			  			与
-			  			<span class="text-blue" @tap="goNavigator(1)">《dsshop隐私政策》</span>
+			  			<span class="text-blue" @tap="goNavigator(1)">《TMShop隐私政策》</span>
 			  		</view>
 			  		<view class="grid bg-white col-2 solid-top">
 						<view class="bg-white" @click="modalName = ''"><button>不同意</button></view>
@@ -88,7 +88,7 @@
 					name: 'span',
 					children: [{
 						type: 'text',
-						text: '在您注册成为dsshop用户的过程中，您需要完成我们的注册流程并通过点击同意的形式在线签署以下协议，'
+						text: '在您注册成为TMShop用户的过程中，您需要完成我们的注册流程并通过点击同意的形式在线签署以下协议，'
 					}],
 					},{
 					name: 'span',
@@ -104,14 +104,14 @@
 					name: 'p',
 					children: [{
 						type: 'text',
-						text: '《dsshop用户注册协议》'
+						text: '《TMShop用户注册协议》'
 					}],
 				},
 				{
 					name: 'p',
 					children: [{
 						type: 'text',
-						text: '《dsshop隐私政策》'
+						text: '《TMShop隐私政策》'
 					}],
 				},
 				{
@@ -121,14 +121,14 @@
 					},
 					children: [{
 						type: 'text',
-						text: '【请您注意】如果您不同意上述协议或其中任何条款约定，请您停止注册。您停止注册后将仅可以浏览我们的商品信息但无法享受我们的产品或服务。如您按照注册流程提示填写信息、阅读并点击同意上述协议且完成全部注册流程后，即表示您已充分阅读、理解并接受协议的全部内容；并表明您也同意dsshop可以依据以上的隐私政策内容来处理您的个人信息。'
+						text: '【请您注意】如果您不同意上述协议或其中任何条款约定，请您停止注册。您停止注册后将仅可以浏览我们的商品信息但无法享受我们的产品或服务。如您按照注册流程提示填写信息、阅读并点击同意上述协议且完成全部注册流程后，即表示您已充分阅读、理解并接受协议的全部内容；并表明您也同意TMShop可以依据以上的隐私政策内容来处理您的个人信息。'
 					}],
 				},
 				{
 					name: 'span',
 					children: [{
 						type: 'text',
-						text: '如您对以上协议内容有任何疑问，您可随时与dsshop客服联系。'
+						text: '如您对以上协议内容有任何疑问，您可随时与TMShop客服联系。'
 					}],
 				},
 				],
@@ -174,7 +174,7 @@
 				}
 				this.logining = true
 				Login.login(ruleForm,function(res){
-					uni.setStorageSync('dsshopApplytoken', res.api_token)
+					uni.setStorageSync('TMShopApplytoken', res.api_token)
 					that.login(res)
 					that.logining = false
 					that.$api.msg(`登录成功`);
@@ -238,10 +238,10 @@
 					  Login.authorization({
 						iv: e.detail.iv,
 						encryptedData: e.detail.encryptedData,
-						session_key: uni.getStorageSync('applyDsshopSession_key'),
+						session_key: uni.getStorageSync('applyTMShopSession_key'),
 						platform: getPlatform()
 					  },function(res){
-						uni.setStorageSync('dsshopApplytoken', res.api_token)
+						uni.setStorageSync('TMShopApplytoken', res.api_token)
 						that.login(res)
 						that.$api.msg(`登录成功`);
 						uni.navigateBack()

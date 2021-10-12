@@ -48,8 +48,8 @@
 			},
 			//清除缓存
 			clearCache(){
-				uni.removeStorageSync('dsshopOrderList')
-				uni.removeStorageSync('dsshopCartList')
+				uni.removeStorageSync('TMShopOrderList')
+				uni.removeStorageSync('TMShopCartList')
 				this.$api.msg('缓存清除成功')
 			},
 			navTo(url){

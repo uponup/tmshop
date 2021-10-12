@@ -13,17 +13,17 @@ const store = new Vuex.Store({
 			state.hasLogin = true
 			state.userInfo = provider;
 			uni.setStorage({//缓存用户登陆状态
-			    key: 'dsshopUserInfo',  
+			    key: 'TMShopUserInfo',  
 			    data: provider  
 			}) 
 			// console.log(state.userInfo);
 		},
 		logout(state) {
-			uni.removeStorageSync('dsshopApplytoken')
-			uni.removeStorageSync('applyDsshopSession_key')
-			uni.removeStorageSync('applyDsshopOpenid')
-			uni.removeStorageSync('dsshopUserInfo')
-			uni.removeStorageSync('dsshopCartList')
+			uni.removeStorageSync('TMShopApplytoken')
+			uni.removeStorageSync('applyTMShopSession_key')
+			uni.removeStorageSync('applyTMShopOpenid')
+			uni.removeStorageSync('TMShopUserInfo')
+			uni.removeStorageSync('TMShopCartList')
 			state.hasLogin = false;
 			state.userInfo = {};
 		},

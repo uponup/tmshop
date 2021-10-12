@@ -1,5 +1,5 @@
 {
-    "name" : "DSSHOP电商商城",
+    "name" : "TMShop电商商城",
     "appid" : "",
     "description" : "",
     "versionName" : "1.0.0",
@@ -74,7 +74,7 @@
     },
     "h5" : {
         "devServer" : {},
-        "title" : "DSSHOP电商商城",
+        "title" : "TMShop电商商城",
         "domain" : "",
         "router" : {
             "base" : "/h5/"
