@@ -308,7 +308,6 @@ class LoginController extends Controller
         $MiniProgram = new MiniProgram();
         $mini = $MiniProgram->mini($request->platform, $request->code);
 
-        echo "====> " . $mini;
         if ($mini['result'] == 'ok') {
             return resReturn(1, $mini);
         } else {
