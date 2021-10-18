@@ -267,11 +267,10 @@ class MiniProgram extends Model
             ];
         }
 
-        Log::info("====> " . $result);
         if ($result['return_code'] == 'FAIL' && array_key_exists('return_msg', $result)) {
             throw new \Exception($result['return_msg'], Code::CODE_WRONG);
         }
-        throw new \Exception('支付异常，请联系管理员', Code::CODE_WRONG);
+        throw new \Exception('支付异常，请联系管理员: ' . json_encode($result), Code::CODE_WRONG);
     }
 
     /**
