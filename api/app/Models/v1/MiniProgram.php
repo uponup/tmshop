@@ -266,6 +266,8 @@ class MiniProgram extends Model
                 'code_url' => array_key_exists('code_url', $result) ? $result['code_url'] : '',
             ];
         }
+
+        Log::info("====> " . $result);
         if ($result['return_code'] == 'FAIL' && array_key_exists('return_msg', $result)) {
             throw new \Exception($result['return_msg'], Code::CODE_WRONG);
         }
